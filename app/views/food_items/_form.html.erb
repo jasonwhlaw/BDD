@@ -1,0 +1,26 @@
+<%= form_for @food_item, :html => {:multipart => true} do |f| %>
+<!-- this will support form to transfer files in multiple parts, as an image is transfered in multiparts -->
+  <% if @food_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@food_item.errors.count, "error") %> prohibited this food_item from being saved:</h2>
+
+      <ul>
+      <% @food_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

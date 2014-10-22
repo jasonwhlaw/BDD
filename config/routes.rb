@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :food_items
+
   # get 'welcome/index' # we only need this if we want to access this page base on this path
 
   # The priority is based upon order of creation: first created -> highest priority.
